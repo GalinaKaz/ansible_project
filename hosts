@@ -1,0 +1,9 @@
+[local_and_remote]
+localhost
+webserver1
+
+[remote]
+webserver1
+
+[local]
+localhost
