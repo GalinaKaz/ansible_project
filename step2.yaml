@@ -1,4 +1,5 @@
-- hosts: local_and_remote
+- name: STEP II
+  hosts: local_and_remote
   become: no
   vars:
     dir_test: "Test"
