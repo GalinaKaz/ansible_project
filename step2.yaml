@@ -1,0 +1,24 @@
+- hosts: local_and_remote
+  become: no
+  vars:
+    dir_test: "Test"
+  tasks:
+
+  - name: Create "{{ dir_test }}" directory
+    command: mkdir -p "{{ dir_test }}"
+
+  - name: Clone a repo to "{{ dir_test }}"  directory
+    git:
+      repo: https://github.com/GalinaKaz/for_test.git
+      clone: yes
+      dest: "{{ dir_test }}" 
+
+  - name: list  "{{ dir_test }}"  directory
+    shell:
+      cmd: date> "{{ dir_test }}"/log; python3 "{{ dir_test }}"/simple.py >> "{{ dir_test }}"/log 
+
+  - name: printing log output 
+    command: cat  "{{ dir_test }}"/log
+    register: my_output
+
+  - debug: var=my_output.stdout_lines 

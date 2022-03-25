@@ -1,0 +1,17 @@
+---
+- name: STEP I
+  hosts: local_and_remote
+  become: yes
+  vars:
+    packages: [git]
+
+  tasks:
+  - name: Checking ping
+    ping:
+
+  - name: Install Packages
+    apt: name={{ item }} update_cache=yes state=latest
+    with_items: 
+      - "{{ packages }}"
+
+
