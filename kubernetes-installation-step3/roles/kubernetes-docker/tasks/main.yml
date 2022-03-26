@@ -1,0 +1,7 @@
+---
+# tasks file for kubernetes-docker
+- name: add docker
+  include_tasks: docker.yml
+
+- name: add kubernetes
+  include_tasks: kubernetes.yml
