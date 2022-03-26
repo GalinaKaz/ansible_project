@@ -14,7 +14,7 @@
       clone: yes
       dest: "{{ dir_test }}" 
 
-  - name: list  "{{ dir_test }}"  directory
+  - name: Running the python simple.py file
     shell:
       cmd: date> "{{ dir_test }}"/log; python3 "{{ dir_test }}"/simple.py >> "{{ dir_test }}"/log 
 

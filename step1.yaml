@@ -3,7 +3,7 @@
   hosts: local_and_remote
   become: yes
   vars:
-    packages: [git]
+    packages: [git, python3]
 
   tasks:
   - name: Checking ping
