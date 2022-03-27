@@ -1,4 +1,4 @@
-- hosts: local
+- hosts: local_and_remote
   become: yes
   roles: 
     - kubernetes-docker
